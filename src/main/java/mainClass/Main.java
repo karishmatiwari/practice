@@ -27,14 +27,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        String metric_name = "";
 
-        ApplicationContext applicationContext = ApplicationContextUtils.getApplicationContext();
+        ConfigQueryAttributes configQueryAttributes = new ConfigQueryAttributes(metric_name, "metric_query_attribute","String");
+        ConfigQuery configQuery = new ConfigQuery(metric_name, "query", "daily", "enabled","19.3.0.288","16-MAR-19","16-MAR-19",Arrays.asList(configQueryAttributes));
+
 
         ApplicationContext appCntx = new ClassPathXmlApplicationContext("META-INF/spring-context.xml");
 
+        ConfigQueryService strFromContext = (ConfigQueryService) appCntx.getBean("configQueryService");
 
-
-        ConfigQueryService strFromContext = (ConfigQueryService) applicationContext.getBean("ConfigQueryService");
+        strFromContext.save(configQuery);
 
     }
 

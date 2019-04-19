@@ -1,6 +1,7 @@
 package service;
 
 import dao.CQDao;
+import dao.ConfigDaoSpring;
 import dao.ConfigQueryDAO;
 import model.ConfigQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.List;
 @Transactional
 public class ConfigQueryServiceImpl implements ConfigQueryService {
 
-    @Autowired private CQDao configQueryDAO;
+    @Autowired private CQDao configQueryDAO; //configDaoSpring
     //private ConfigQueryDAO configQueryDAO;
 
     @Override

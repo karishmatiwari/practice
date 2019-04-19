@@ -1,4 +1,4 @@
-/*
+
 
 package app;
 
@@ -20,10 +20,10 @@ import java.util.Arrays;
 
 
 
-*/
+
 /**
  * @author Tiwari Karishma (tiwarik@optymyze.com)
- *//*
+ */
 
 
 
@@ -38,20 +38,30 @@ public class ConfigQueryDaoTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        //mockConfigQuery();
     }
 
-    @After
+
+   /* @After
     public void cleanUp() {
-        entityManager.createQuery("DELETE FROM " +ConfigQueryAttributes.class.getName()+" where metricId = 'test metric name'").executeUpdate();
-        entityManager.createQuery("DELETE FROM " +ConfigQuery.class.getName() +" where metricId = 'test metric name'").executeUpdate();
-    }
+        *//*entityManager.createQuery("DELETE FROM " +ConfigQueryAttributes.class.getName()+" where metricId = :metricId")
+                .setParameter("metricId", "test metric name")
+                .executeUpdate();*//*
+        entityManager.createNativeQuery("DELETE from CONFIG_QUERY_ATTRIBUTES where CQA_QUERY_ID = 'test metric name'").executeUpdate();
+        entityManager.createNativeQuery("DELETE from CONFIG_QUERIES where CQ_QUERY_ID = 'test metric name'").executeUpdate();
+
+        *//*entityManager.createQuery("DELETE FROM " +ConfigQuery.class.getName()+" where metricId = :metricId")
+                .setParameter("metricId", "test metric name")
+                .executeUpdate();*//*
+        //entityManager.createQuery("DELETE FROM " +ConfigQuery.class.getName() +" where metricId = 'test metric name'").executeUpdate();
+    }*/
 
 
     @Test
     public void insertTest() {
-        //configQueryDAO.insert(mockConfigQuery());
+        configQueryDAO.save(mockConfigQuery());
 
-       // Assert.assertEquals("test metric name",queryCheck("test metric name").getMetricId());
+        Assert.assertEquals("test metric name",queryCheck("test metric name").getMetricId());
     }
 
     private ConfigQuery queryCheck(String metricId) {
@@ -93,4 +103,4 @@ public class ConfigQueryDaoTest {
 
 }
 
-*/
+

@@ -2,20 +2,18 @@ package app;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import org.mockito.runners.MockitoJUnitRunner;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
-
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.when;
 
 
 /**
@@ -24,25 +22,23 @@ import java.io.IOException;
 
 
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(System.class)
+@RunWith(MockitoJUnitRunner.class)
 public class AppTest {
 
-    @Rule
-    public TemporaryFolder tempFolder = new TemporaryFolder();
+    //private App app = new App();
 
-   // @Value("${shared-temp-folder}") protected String tempFolder;
-    private App app = new App();
-    File createdFile;
+    @Mock private Properties properties;
+    @InjectMocks private App app;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        //mockSystemGetEnv();
+        mockProperties();
     }
 
     @Test
     public void propFileLoadingTest() throws IOException {
+        //String expected = "value";
         String expected = "Optymyze_Telemetry_DW_Dev";
         String actual = app.getFile(PropertyKeys.USER_NAME.getKey());
         Assert.assertEquals(expected,actual);
@@ -56,20 +52,10 @@ public class AppTest {
     }
 
 
-    private void mockSystemGetEnv() {
-        PowerMockito.mockStatic(System.class);
-        // Create a temporary file.
-        try {
-            //createdFile = tempFolder.newFile("telemetry");
-            createdFile = tempFolder.newFolder("CAPFolder");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        String path = createdFile.getPath();
-        //File file = new File(tempFolder);
-        PowerMockito.when(System.getenv("client_analytics")).thenReturn(path);
+    private void mockProperties() {
+        when(properties.getProperty(anyString())).thenReturn("value");
     }
+
 
 
 }

@@ -18,7 +18,7 @@ public class ConfigDaoSpring implements CQDao {
 
     EntityManager em = Util.getEntityManager();
 
-    @Transactional
+    @Transactional//todo
     public void save(ConfigQuery configQuery) {
         em.persist(configQuery);
     }
@@ -26,7 +26,7 @@ public class ConfigDaoSpring implements CQDao {
     @Transactional
     public void saveAll(List<ConfigQuery> configQueryList) {
         for (ConfigQuery configQuery : configQueryList) {
-            em.persist(configQuery);
+            em.persist(configQuery);//todo
         }
     }
 
@@ -37,8 +37,10 @@ public class ConfigDaoSpring implements CQDao {
 
     @Transactional
     public void delete(String metricId) {
-        ConfigQuery configQuery = em.find(ConfigQuery.class, metricId);
-        em.remove(configQuery); // todo : try query
+        //ConfigQuery configQuery = em.find(ConfigQuery.class, metricId);
+        em.createQuery("DELETE from " + ConfigQuery.class.getName() + " where metricId = :metricId")
+                .setParameter("metricId", metricId).executeUpdate();
+       // em.remove(configQuery); // todo : try query
     }
 
     @Transactional

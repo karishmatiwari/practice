@@ -15,7 +15,7 @@ public class MetricAttributeSpecifiedValidator implements Validator<String> {
         args.forEach(value-> {
             ConfigQueryDAO configQueryDAO = new ConfigQueryDAO();
             ConfigQuery configQuery = configQueryDAO.getConfigQuery(value);
-            doValidation(configQuery.getConfigQueryAttributes().size() >= 1,
+            doValidation(!configQuery.getConfigQueryAttributes().isEmpty(),
                     "No attribute present. At least one attribute should be there");
         });
 
