@@ -6,14 +6,15 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author Tiwari Karishma (tiwarik@optymyze.com)
  */
 
-@Repository
-public class ConfigDaoSpring {
+@Repository("CQDao")
+public class ConfigDaoSpring implements CQDao {
 
     EntityManager em = Util.getEntityManager();
 
@@ -31,15 +32,25 @@ public class ConfigDaoSpring {
 
     @Transactional
     public void update(ConfigQuery configQuery) {
-
+        em.merge(configQuery);
     }
 
     @Transactional
-    public void get(String metricId) {
+    public void delete(String metricId) {
         ConfigQuery configQuery = em.find(ConfigQuery.class, metricId);
-        em.remove(configQuery);
+        em.remove(configQuery); // todo : try query
     }
 
+    @Transactional
+    public ConfigQuery get(String metricId) {
+        ConfigQuery configQuery = em.find(ConfigQuery.class, metricId);
+        return configQuery;
+    }
+
+
+    public List<ConfigQuery> getAll() {
+        return Arrays.asList();
+    }
 
 
 
