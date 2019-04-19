@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="hibernate-core-4.2.4.final.jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" recursive="false" />
+    <jarDirectory url="jar://$USER_HOME$/Downloads/hibernate-core-4.2.4.final.jar.zip!/" recursive="false" type="SOURCES" />
+  </library>
+</component>

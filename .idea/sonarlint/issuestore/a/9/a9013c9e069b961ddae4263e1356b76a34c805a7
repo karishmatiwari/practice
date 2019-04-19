@@ -1,0 +1,4 @@
+
+Xsquid:UselessImportCheck"/Remove this unused import 'app.ConfigQueryDAO'.(Ò²¢ˆ8çƒÏ¡-
+Usquid:UselessImportCheck",Remove this unused import 'app.ConfigQuery'.(èéæÔ8çƒÏ¡-
+squid:S1157"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(®¿²8‹‚Ğ¡-

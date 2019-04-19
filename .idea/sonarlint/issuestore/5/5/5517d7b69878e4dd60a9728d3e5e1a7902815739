@@ -1,0 +1,11 @@
+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨èóó8ÿäÛ€£-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ‰¸ùÿÿÿÿ8‘ÙÏ€£-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆƒÔ8ÂÐë€£-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ªÈÉŸ8˜ÂÔ€£-
+lsquid:S1192"KDefine a constant instead of duplicating this literal "new_metric" 3 times.(ˆ‰¸ùÿÿÿÿ8†õì€£-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðú‡Ôúÿÿÿÿ8ø¡Û€£-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÐÚßâùÿÿÿÿ8ÿäÛ€£-
+Qsquid:S1481"0Remove this unused "configQuery" local variable.(µ…ÌÆüÿÿÿÿ8ÂÐë€£-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆ‚äï8€Õï€£-
+Osquid:S1481".Remove this unused "validator" local variable.(ÆÕŒÔúÿÿÿÿ8€Õï€£-
