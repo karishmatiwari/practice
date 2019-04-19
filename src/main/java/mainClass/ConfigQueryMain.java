@@ -1,4 +1,4 @@
-package app;
+package mainClass;
 
 import dao.ConfigQueryDAO;
 import model.ConfigQuery;
@@ -22,7 +22,7 @@ public class ConfigQueryMain {
    public static void main(String[] args) {
        /*String metric_name = "new_metric";
 
-       ConfigQueryServiceImplHib configQueryServiceImplHib = new ConfigQueryServiceImplHib();
+       ConfigQueryServiceImpl configQueryServiceImplHib = new ConfigQueryServiceImpl();
 
        ConfigQueryDAO configQueryDAO = new ConfigQueryDAO();
        configQueryServiceImplHib.setConfigQueryDao(configQueryDAO);

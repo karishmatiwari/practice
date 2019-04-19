@@ -2,6 +2,7 @@
 
 package app;
 
+import dao.CQDao;
 import model.ConfigQuery;
 import model.ConfigQueryAttributes;
 import org.junit.After;
@@ -18,6 +19,7 @@ import javax.sql.DataSource;
 import java.util.Arrays;
 
 
+
 */
 /**
  * @author Tiwari Karishma (tiwarik@optymyze.com)
@@ -25,10 +27,11 @@ import java.util.Arrays;
 
 
 
+
 @RunWith(MockitoJUnitRunner.class)
 public class ConfigQueryDaoTest {
 
-    @Autowired private ConfigQueryDAO configQueryDAO;
+    @Autowired private CQDao configQueryDAO;
 
     EntityManager entityManager = Util.getEntityManager();
 

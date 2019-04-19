@@ -1,5 +1,6 @@
 package service;
 
+import dao.CQDao;
 import dao.ConfigQueryDAO;
 import model.ConfigQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,23 +13,25 @@ import java.util.List;
  * @author Tiwari Karishma (tiwarik@optymyze.com)
  */
 
-@Service
-public class ConfigQueryServiceImplHib implements ConfigQueryService{
+@Service("ConfigQueryService")
+@Transactional
+public class ConfigQueryServiceImpl implements ConfigQueryService {
 
-    @Autowired
-    private ConfigQueryDAO configQueryDAO;
+    @Autowired private CQDao configQueryDAO;
+    //private ConfigQueryDAO configQueryDAO;
 
     @Override
     public void save(ConfigQuery configQuery) {
-        configQueryDAO.insert(configQuery);
+        configQueryDAO.save(configQuery);
     }
 
     @Override
-    @Transactional
+    //@Transactional
     public void saveAll(List<ConfigQuery> configQueryList) {
-        for (ConfigQuery configQuery : configQueryList) {
-            configQueryDAO.insert(configQuery);//todo
-        }
+       /* for (ConfigQuery configQuery : configQueryList) {
+            configQueryDAO.save(configQuery);//todo
+        }*/
+       configQueryDAO.saveAll(configQueryList);
     }
 
     @Override
@@ -38,7 +41,7 @@ public class ConfigQueryServiceImplHib implements ConfigQueryService{
 
     @Override
     public ConfigQuery getConfigQuery(String metricId) {
-        return configQueryDAO.getConfigQuery(metricId);
+        return configQueryDAO.get(metricId);
     }
 
     @Override
@@ -48,11 +51,13 @@ public class ConfigQueryServiceImplHib implements ConfigQueryService{
 
 
 
-    public ConfigQueryDAO getConfigQueryDao() {
+    /*public ConfigQueryDAO getConfigQueryDao() {
         return configQueryDAO;
     }
 
     public void setConfigQueryDao(ConfigQueryDAO ConfigQueryDAO) {
         this.configQueryDAO = ConfigQueryDAO;
-    }
+    }*/
+
+
 }
