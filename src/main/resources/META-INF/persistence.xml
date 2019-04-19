@@ -11,8 +11,8 @@
    <!-- <provider>javax.persistence.spi.PersistenceProviderResolverHolder</provider>-->
 
 
-    <class>app.ConfigQuery</class>
-    <class>app.ConfigQueryAttributes</class>
+    <class>model.ConfigQuery</class>
+    <class>model.ConfigQueryAttributes</class>
 
 
 </persistence-unit>

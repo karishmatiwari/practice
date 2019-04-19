@@ -1,6 +1,4 @@
-package app;
-
-import org.hibernate.annotations.Cascade;
+package model;
 
 import javax.persistence.*;
 import java.util.List;

@@ -1,5 +1,8 @@
 package app;
 
+import dao.ConfigQueryDAO;
+import model.ConfigQuery;
+import model.ConfigQueryAttributes;
 import org.springframework.stereotype.Component;
 import validator.MetricAttributeSpecifiedValidator;
 import validator.MetricNameLowerCaseValidator;

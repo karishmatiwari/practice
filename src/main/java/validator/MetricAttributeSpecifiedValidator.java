@@ -1,7 +1,7 @@
 package validator;
 
-import app.ConfigQuery;
-import app.ConfigQueryDAO;
+import model.ConfigQuery;
+import dao.ConfigQueryDAO;
 import validator.api.Validator;
 
 import java.util.List;

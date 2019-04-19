@@ -1,7 +1,10 @@
-package app;
+package service;
 
+import dao.ConfigQueryDAO;
+import model.ConfigQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,7 +24,7 @@ public class ConfigQueryServiceImplHib implements ConfigQueryService{
     }
 
     @Override
-    //@Transactional
+    @Transactional
     public void saveAll(List<ConfigQuery> configQueryList) {
         for (ConfigQuery configQuery : configQueryList) {
             configQueryDAO.insert(configQuery);//todo
@@ -42,6 +45,8 @@ public class ConfigQueryServiceImplHib implements ConfigQueryService{
     public void delete(String metricId) {
         configQueryDAO.delete(metricId);
     }
+
+
 
     public ConfigQueryDAO getConfigQueryDao() {
         return configQueryDAO;

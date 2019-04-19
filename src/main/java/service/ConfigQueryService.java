@@ -1,4 +1,6 @@
-package app;
+package service;
+
+import model.ConfigQuery;
 
 import java.util.List;
 

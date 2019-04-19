@@ -1,4 +1,3 @@
-/*
 package app;
 
 import org.junit.Assert;
@@ -19,10 +18,9 @@ import java.io.IOException;
 
 
 
-*/
 /**
  * @author Tiwari Karishma (tiwarik@optymyze.com)
- *//*
+ */
 
 
 
@@ -75,6 +73,3 @@ public class AppTest {
 
 
 }
-
-
-*/

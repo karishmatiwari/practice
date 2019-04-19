@@ -1,5 +1,6 @@
 package app;
 
+import model.ConfigQuery;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 

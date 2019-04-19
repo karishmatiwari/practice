@@ -1,4 +1,4 @@
-package app;
+package model;
 
 import javax.persistence.*;
 
@@ -17,21 +17,18 @@ public class ConfigQueryAttributes {
     @Column(name = "CQA_QUERY_ATT_DATATYPES")
     private String attributeDataType;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="CQ_QUERY_ID")
+    private ConfigQuery configQuery;
+
     public ConfigQueryAttributes() {
     }
 
-    public String getAttributeDataType() {
-        return attributeDataType;
-    }
-
-    public void setAttributeDataType(String attributeDataType) {
-        this.attributeDataType = attributeDataType;
-    }
-
-    public ConfigQueryAttributes(String metricAttrId, String queryAttributes, String attributeDataType) {
+    public ConfigQueryAttributes(String metricAttrId, String queryAttributes, String attributeDataType, ConfigQuery configQuery) {
         this.metricAttrId = metricAttrId;
         this.queryAttributes = queryAttributes;
         this.attributeDataType = attributeDataType;
+        this.configQuery = configQuery;
     }
 
     public String getMetricId() {
@@ -57,6 +54,23 @@ public class ConfigQueryAttributes {
 
     public void setQueryAttributes(String queryAttributes) {
         this.queryAttributes = queryAttributes;
+    }
+
+
+    public ConfigQuery getConfigQuery() {
+        return configQuery;
+    }
+
+    public void setConfigQuery(ConfigQuery configQuery) {
+        this.configQuery = configQuery;
+    }
+
+    public String getAttributeDataType() {
+        return attributeDataType;
+    }
+
+    public void setAttributeDataType(String attributeDataType) {
+        this.attributeDataType = attributeDataType;
     }
 }
 

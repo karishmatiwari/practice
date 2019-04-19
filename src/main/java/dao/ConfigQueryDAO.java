@@ -1,5 +1,7 @@
-package app;
+package dao;
 
+import app.Util;
+import model.ConfigQuery;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

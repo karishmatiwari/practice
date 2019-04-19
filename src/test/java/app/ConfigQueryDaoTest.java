@@ -2,8 +2,8 @@
 
 package app;
 
-import app.ConfigQuery;
-import app.ConfigQueryAttributes;
+import model.ConfigQuery;
+import model.ConfigQueryAttributes;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
