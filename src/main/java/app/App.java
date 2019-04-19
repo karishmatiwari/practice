@@ -25,7 +25,7 @@ public class App {
 
         try {
             //input = this.getClass().getResourceAsStream("/config.properties");
-            input = new FileInputStream(System.getenv(PropertyKeys.CLIENT_ANALYTICS.getKey()));
+            input = new FileInputStream(file.getName());
 
             // load a properties file
             prop.load(input);
