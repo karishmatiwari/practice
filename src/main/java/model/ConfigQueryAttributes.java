@@ -17,18 +17,18 @@ public class ConfigQueryAttributes {
     @Column(name = "CQA_QUERY_ATT_DATATYPES")
     private String attributeDataType;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+   /* @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CQ_QUERY_ID")
-    private ConfigQuery configQuery;
+    private ConfigQuery configQuery;*/
 
     public ConfigQueryAttributes() {
     }
 
-    public ConfigQueryAttributes(String metricAttrId, String queryAttributes, String attributeDataType, ConfigQuery configQuery) {
+    public ConfigQueryAttributes(String metricAttrId, String queryAttributes, String attributeDataType) {
         this.metricAttrId = metricAttrId;
         this.queryAttributes = queryAttributes;
         this.attributeDataType = attributeDataType;
-        this.configQuery = configQuery;
+        //this.configQuery = configQuery;
     }
 
     public String getMetricId() {
@@ -57,13 +57,13 @@ public class ConfigQueryAttributes {
     }
 
 
-    public ConfigQuery getConfigQuery() {
+    /*public ConfigQuery getConfigQuery() {
         return configQuery;
     }
 
     public void setConfigQuery(ConfigQuery configQuery) {
         this.configQuery = configQuery;
-    }
+    }*/
 
     public String getAttributeDataType() {
         return attributeDataType;
